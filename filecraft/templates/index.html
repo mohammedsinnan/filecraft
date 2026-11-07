@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="filecraft-token" content="{{ token }}">
+  <title>Filecraft | Local file studio</title>
+  <link rel="icon" href="{{ url_for('static', filename='mark.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="swap" viewBox="0 0 24 24"><path d="M3 7h17m-5-5 5 5-5 5M21 17H4m5-5-5 5 5 5"/></symbol>
+    <symbol id="link" viewBox="0 0 24 24"><path d="m10 13 4-4m-6 7-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m4 2 1-1a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(0 1)"/></symbol>
+    <symbol id="upload" viewBox="0 0 24 24"><path d="M12 15V3m-4 4 4-4 4 4M4 15v5h16v-5"/></symbol>
+    <symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></symbol>
+    <symbol id="file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3 8 8 11 5-3 8-6 8-11V5zM9 12l2 2 4-4"/></symbol>
+    <symbol id="grid" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M4 14h16M10 9v11"/></symbol>
+    <symbol id="image" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 17l6-6 4 4 3-3 5 5"/><circle cx="16" cy="8" r="1"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="shell top-inner">
+      <a class="brand" href="/" aria-label="Filecraft home">
+        <img src="{{ url_for('static', filename='mark.svg') }}" alt="" width="35" height="35">
+        <span>Filecraft<span class="brand-dot">.</span></span>
+      </a>
+      <span class="local-label"><i></i> Local workspace</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="main-heading">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE LOCAL FILE STUDIO</p>
+        <h1 id="main-heading">Make files <em>work.</em></h1>
+        <p>Convert your files or save media from a link, right from your computer.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 434 220" fill="none">
+          <path d="M4 111h426M217 2v216M74 30v160m285-160v160" stroke="#fff" stroke-opacity=".12" stroke-dasharray="3 7"/>
+          <ellipse cx="218" cy="112" rx="176" ry="68" stroke="#ffcba8" stroke-opacity=".24" transform="rotate(-12 218 112)"/>
+          <path d="M128 122l65-19 58 18 79-25" stroke="#ff9a66" stroke-opacity=".6" stroke-dasharray="4 7"/>
+          <g transform="translate(65 64) rotate(-13 46 52)">
+            <rect x="3" y="5" width="90" height="101" rx="15" fill="#211329" stroke="#6c4b68"/>
+            <path d="M29 20h27l11 11v35H29V20Z" stroke="#e2b7cb" stroke-width="1.4"/>
+            <path d="M56 20v12h11M37 45h22m-22 8h17" stroke="#e2b7cb" stroke-width="1.4"/>
+            <text x="48" y="89" text-anchor="middle" fill="#e2b7cb" font-family="monospace" font-size="11" letter-spacing="2">PDF</text>
+          </g>
+          <g transform="translate(173 37)">
+            <rect x="0" y="0" width="97" height="114" rx="17" fill="#ff9d6b"/>
+            <rect x="23" y="23" width="51" height="42" rx="5" stroke="#341827" stroke-width="1.7"/>
+            <circle cx="58" cy="36" r="4" stroke="#341827" stroke-width="1.6"/>
+            <path d="m23 59 15-16 11 11 8-7 17 16" stroke="#341827" stroke-width="1.7" stroke-linejoin="round"/>
+            <text x="49" y="91" text-anchor="middle" fill="#341827" font-family="monospace" font-size="12" font-weight="700" letter-spacing="2">JPG</text>
+          </g>
+          <g transform="translate(287 79) rotate(13 44 51)">
+            <rect x="0" y="0" width="87" height="97" rx="14" fill="#271831" stroke="#735569"/>
+            <rect x="23" y="20" width="41" height="35" rx="2" stroke="#e2b7cb" stroke-width="1.4"/>
+            <path d="M23 30h41M23 42h41M38 30v25" stroke="#e2b7cb" stroke-width="1.4"/>
+            <text x="44" y="77" text-anchor="middle" fill="#e2b7cb" font-family="monospace" font-size="11" letter-spacing="1.5">XLSX</text>
+          </g>
+          <circle cx="57" cy="140" r="3" fill="#ff9d6b"/><circle cx="359" cy="53" r="3" fill="#ff9d6b"/>
+          <path d="M293 30v14m-7-7h14M150 164v12m-6-6h12" stroke="#ffd2b9" stroke-width="1.2"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="File tools">
+      <div class="workspace-heading">
+        <h2>Workspace</h2>
+        <span class="small-label">02 TOOLS</span>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Choose a tool">
+        <button id="tab-convert" class="tab" type="button" role="tab" aria-selected="true" aria-controls="convert"><svg class="icon"><use href="#swap"/></svg> Convert files</button>
+        <button id="tab-media" class="tab" type="button" role="tab" aria-selected="false" aria-controls="media" tabindex="-1"><svg class="icon"><use href="#link"/></svg> Download media</button>
+      </div>
+
+      <div id="convert" class="tool-grid" role="tabpanel" aria-labelledby="tab-convert">
+        <form id="convert-form" class="card tool">
+          <div class="tool-heading"><span class="tool-number">01</span><div><h3>Convert a file</h3><p>Choose a source file and the format you want.</p></div></div>
+          <label class="dropzone" id="drop-zone" for="files">
+            <input id="files" type="file" class="visually-hidden" accept=".pdf,.jpg,.jpeg,.png,.webp,.xlsx,.csv,.tsv" multiple>
+            <span class="upload-icon"><svg class="icon"><use href="#upload"/></svg></span>
+            <span class="drop-title">Drop files here or <strong>browse</strong></span>
+            <span id="file-hint" class="hint">PDF, JPG, PNG, WebP, XLSX, CSV, TSV · 64 MB total</span>
+          </label>
+          <ul id="file-list" class="file-list" aria-label="Selected files" hidden></ul>
+          <div class="conversion-settings">
+            <label class="field"><span>Convert to</span><select id="target" name="target" disabled><option value="">Select a file first</option></select></label>
+            <label id="dpi-field" class="field" hidden><span>Resolution</span><select id="dpi" name="dpi"><option value="150">150 DPI</option><option value="300" selected>300 DPI</option><option value="450">450 DPI</option></select></label>
+          </div>
+          <p id="quality-note" class="quality-note" hidden></p>
+          <button id="convert-button" type="submit" class="primary" disabled>Convert file <svg class="icon"><use href="#arrow"/></svg></button>
+          <div class="feedback" id="convert-feedback" aria-live="polite" hidden></div>
+        </form>
+        <aside class="card sidebar" aria-labelledby="shortcuts-heading">
+          <p class="small-label">QUICK START</p>
+          <h3 id="shortcuts-heading">Popular conversions</h3>
+          <div class="shortcuts">
+            <button type="button" data-preset="pdf:jpg"><span class="format-icon pdf"><svg class="icon"><use href="#file"/></svg></span><span><b>PDF to JPG</b><small>Export each page as an image</small></span><svg class="icon chevron"><use href="#arrow"/></svg></button>
+            <button type="button" data-preset="jpg:pdf"><span class="format-icon jpg"><svg class="icon"><use href="#image"/></svg></span><span><b>Images to PDF</b><small>Combine JPG, PNG or WebP</small></span><svg class="icon chevron"><use href="#arrow"/></svg></button>
+            <button type="button" data-preset="pdf:xlsx"><span class="format-icon sheet"><svg class="icon"><use href="#grid"/></svg></span><span><b>PDF to Excel</b><small>Extract tables with borders</small></span><svg class="icon chevron"><use href="#arrow"/></svg></button>
+            <button type="button" data-preset="xlsx:csv"><span class="format-icon sheet"><svg class="icon"><use href="#grid"/></svg></span><span><b>Excel to CSV</b><small>Export worksheet values</small></span><svg class="icon chevron"><use href="#arrow"/></svg></button>
+          </div>
+        </aside>
+      </div>
+
+      <div id="media" class="tool-grid" role="tabpanel" aria-labelledby="tab-media" hidden>
+        <form id="media-form" class="card tool">
+          <div class="tool-heading"><span class="tool-number">02</span><div><h3>Download from a link</h3><p>Save the best available media from Instagram or TikTok.</p></div></div>
+          <label class="field"><span>Post, Reel or Story link</span><input type="url" id="media-url" name="url" placeholder="https://www.instagram.com/reel/…" autocomplete="off" spellcheck="false" maxlength="4096" required></label>
+          <div class="platforms"><span>Instagram</span><span>TikTok</span><span class="quality-tag">Original streams</span></div>
+          <details class="session">
+            <summary>Session cookies <span>Optional for public posts</span></summary>
+            <p>Stories need a signed-in session that can view them. Select a Netscape-format cookies.txt file for the linked platform. Treat it like a password. Filecraft uses it for this request and clears its temporary copy.</p>
+            <label class="field"><span>Cookies file</span><input id="cookies" name="cookies" type="file" accept=".txt,text/plain"></label>
+          </details>
+          <label class="checkbox"><input type="checkbox" name="allowed" value="yes" required><span>I have permission to save this content.</span></label>
+          <button id="media-button" type="submit" class="primary">Get media <svg class="icon"><use href="#download"/></svg></button>
+          <div class="feedback" id="media-feedback" aria-live="polite" hidden></div>
+        </form>
+        <aside class="card sidebar media-guide">
+          <p class="small-label">SUPPORTED LINKS</p>
+          <h3>From link to file</h3>
+          <div class="guide-row"><span class="format-icon pdf">IG</span><div><b>Instagram</b><p>Individual posts, photo carousels, Reels and active Stories.</p></div></div>
+          <div class="guide-row"><span class="format-icon sheet">TT</span><div><b>TikTok</b><p>Individual videos and photo posts. Full and short share links.</p></div></div>
+          <div class="guide-row"><span class="format-icon jpg"><svg class="icon"><use href="#download"/></svg></span><div><b>Available source quality</b><p>Media keeps the platform's available encoding. Multi-file results come as a ZIP.</p></div></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <span><svg class="icon"><use href="#shield"/></svg> File conversion runs on your computer.</span>
+    <span class="small-label">FILECRAFT / LOCAL STUDIO</span>
+  </footer>
+  <script id="format-data" type="application/json">{{ formats | tojson }}</script>
+</body>
+</html>
