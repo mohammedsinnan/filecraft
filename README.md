@@ -4,7 +4,9 @@ Filecraft is a local app for converting files and saving media from Instagram or
 
 ## Start
 
-On Windows, install [Python 3.11 or later](https://www.python.org/downloads/windows/) and double-click **`launch.cmd`**. The first launch installs the pinned dependencies. Keep the launcher window open and visit [http://127.0.0.1:8770](http://127.0.0.1:8770).
+On Windows, install [Python 3.11 or later](https://www.python.org/downloads/windows/). If you downloaded a ZIP, right-click it and choose **Extract All**. Open the extracted project folder, where `launch.cmd`, `requirements.txt`, and the `filecraft` folder are together, then double-click **`launch.cmd`**.
+
+The first launch installs the pinned dependencies. Keep the launcher window open and visit [http://127.0.0.1:8770](http://127.0.0.1:8770).
 
 To run it from a terminal on macOS, Linux or Windows:
 

@@ -1,6 +1,8 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+if not exist "requirements.txt" goto incomplete_project
+if not exist "filecraft\__main__.py" goto incomplete_project
 set "APP_PYTHON=.venv\Scripts\python.exe"
 if exist "%APP_PYTHON%" goto dependencies
 
@@ -26,6 +28,14 @@ copy /y requirements.txt .venv\installed-requirements.txt >nul
 "%APP_PYTHON%" -m filecraft %*
 if errorlevel 1 goto failed
 exit /b 0
+
+:incomplete_project
+echo The complete Filecraft folder is required.
+echo If you downloaded a ZIP, right-click it and choose Extract All.
+echo Open the extracted filecraft folder, then double-click launch.cmd.
+echo Keep launch.cmd, requirements.txt, and the filecraft folder together.
+pause
+exit /b 1
 
 :missing_python
 echo Install Python 3.11 or newer from https://www.python.org/downloads/windows/ and launch again.
